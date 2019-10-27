@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Área de un Cuadrado</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </head>
+    <body>
+        <form jsf:prependId="false">
+            <h1>Vamos a calcular el área de un triangulo.</h1>
+            <p>
+                <label>Ingrese la Base <strong>(soló numeros positivos)</strong></label>
+                <br/>
+                <br/>
+                <input jsf:id="base" type="number" min="1" max="100" 
+                       placeholder="Ingrese la Base" jsf:requiredMessage="Soló números positivos"  
+                       jsf:value="#{ctrlArea.base}" required="true"/>
+                <h:message for="base"/>
+            </p>
+
+            <p>
+                <label>Ingrese la Altura <strong>(soló numeros positivos)</strong></label>
+                <br/>
+                <br/>
+                <input jsf:id="altura" type="number" min="1" max="100" 
+                       placeholder="Ingrese la Altura" jsf:value="#{ctrlArea.altura}" required="true"/>
+                <h:message for="altura"/>
+            </p>
+
+            <p>
+                <button jsf:action="#{ctrlArea.calcularArea()}">Calcular Área</button>
+            </p>
+
+            <p>
+                Resultado:
+                <h:messages globalOnly="true"/>
+            </p>
+        </form>
+    </body>
+</html>
+
